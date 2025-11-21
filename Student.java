@@ -1,0 +1,55 @@
+class Student {
+
+    private int rollNumber;
+    private String studentName;
+    private int[] marks = new int[3];
+
+    public Student(int rollNumber, String studentName, int[] marks) {
+        this.rollNumber = rollNumber;
+        this.studentName = studentName;
+        this.marks = marks;
+    }
+
+    // Validate marks (throws custom exception)
+    public void validateMarks() throws InvalidMarksException {
+        for (int i = 0; i < marks.length; i++) {
+            if (marks[i] < 0 || marks[i] > 100) {
+                throw new InvalidMarksException(
+                        "Invalid marks for subject " + (i + 1) + ": " + marks[i]);
+            }
+        }
+    }
+
+    // Calculate and return average
+    public double calculateAverage() {
+        int total = 0;
+        for (int m : marks) {
+            total += m;
+        }
+        return total / 3.0;
+    }
+
+    // Display result of student
+    public void displayResult() {
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Student Name: " + studentName);
+        System.out.print("Marks: ");
+        for (int m : marks) {
+            System.out.print(m + " ");
+        }
+        System.out.println();
+
+        double avg = calculateAverage();
+        System.out.println("Average: " + avg);
+
+        if (avg >= 33) {
+            System.out.println("Result: Pass");
+        } else {
+            System.out.println("Result: Fail");
+        }
+    }
+
+    public int getRollNumber() {
+        return rollNumber;
+    }
+}
