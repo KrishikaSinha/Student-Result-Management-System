@@ -1,30 +1,27 @@
-# Student-Result-Management-System
-This Java program manages student results using exception handling. It stores student data, validates marks with a custom InvalidMarksException, computes averages, and displays pass/fail results. It uses throw, throws, try-catch, and finally for safe execution.
+# 🎓 Student Result Management System
 
-
-# 📚 City Library Digital Management System
-
-A Java-based console application designed to digitally manage library operations using **File Handling** and the **Java Collections Framework**. It supports adding books and members, issuing and returning books, and maintaining persistent records through file storage.
+A Java application that collects student details, validates subject marks, calculates results, and displays pass/fail status. The project demonstrates the complete use of **Exception Handling**, including custom exceptions, try–catch, throw, throws, and finally.
 
 ---
 
 ## 🚀 Features
 
-* Add new books and members
-* Issue and return books
-* Search for books by title, category, or author
-* Sort books using Comparable and Comparator
-* Persistent data storage using File I/O
-* Efficient data management using Maps and Lists
+* Add new student details
+* Validate marks (0–100) using a custom exception
+* Calculate average of 3 subjects
+* Display student details and result status
+* Handle input errors gracefully using exception handling
+* Supports multiple student records
 
 ---
 
 ## 🧠 Technologies Used
 
 * Java
-* Collections Framework (Map, List)
-* Comparable and Comparator
-* File Handling (Buffered I/O, Serialization)
+* Custom Exceptions
+* Exception Handling (`try`, `catch`, `throw`, `throws`, `finally`)
+* Arrays
+* OOP Concepts
 
 ---
 
@@ -32,53 +29,55 @@ A Java-based console application designed to digitally manage library operations
 
 ```
 src/
- ├── Book.java
- ├── Member.java
- └── LibraryManager.java
+ ├── InvalidMarksException.java
+ ├── Student.java
+ └── ResultManager.java
 ```
 
 ---
 
 ## ⚙ How It Works
 
-* All books and members are stored in Maps with their IDs as keys
-* Issued books are tracked using Lists
-* Data is loaded from files at startup and saved on exit
-* Sorting and searching are implemented using Java Collections
+* Marks entered by the user are first validated
+* If marks are outside **0–100**, `InvalidMarksException` is thrown
+* On valid input, average is calculated and result (Pass/Fail) is displayed
+* `try–catch–finally` ensures clean error handling and resource closing
 
 ---
 
-## 💾 File Storage
-
-* `books.txt` — Contains all book data
-* `members.txt` — Contains all member data
-
-Both are created automatically if missing.
-
----
-
-## 📌 Sample Menu
+## 🧾 Sample Menu
 
 ```
-===== City Library Digital Management System =====
-1. Add Book
-2. Add Member
-3. Issue Book
-4. Return Book
-5. Search Books
-6. Sort Books
-7. Exit
+===== Student Result Management System =====
+1. Add Student
+2. Show Student Details
+3. Exit
 ```
 
 ---
 
-## 📍 Summary
+## 📍 Sample Output
 
-This project demonstrates real-world implementation of Java File Handling and Collections. It provides a structured and persistent system to manage books, members, and transactions efficiently using Maps, Lists, Comparable, Comparator, and buffered I/O operations.
+```
+Enter Roll Number: 101
+Enter Student Name: Alice
+Enter Marks: 85 90 88
+Student added successfully.
+```
+
+Invalid input example:
+
+```
+Enter Marks: -10
+Error: Invalid marks for subject 1: -10
+```
 
 ---
 
-## 👩‍💻 Author
+## 📌 Summary
+
+This project demonstrates real-world application of Java exception handling with custom exception design, validation, and clean structured program flow. It builds reliable and error-safe execution using robust exception management.
+
 
 Krishika Sinha
 B.Tech CSE, K.R. Mangalam University
