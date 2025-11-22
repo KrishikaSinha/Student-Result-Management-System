@@ -79,5 +79,3 @@ Error: Invalid marks for subject 1: -10
 This project demonstrates real-world application of Java exception handling with custom exception design, validation, and clean structured program flow. It builds reliable and error-safe execution using robust exception management.
 
 
-Krishika Sinha
-B.Tech CSE, K.R. Mangalam University
